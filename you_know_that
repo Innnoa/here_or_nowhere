@@ -1,1 +1,1 @@
-JY
+curl -s https://js.aigc.bar/webscripts/setup-claudecode.sh | bash -s -- --url https://api.aigc.bar --key sk-QcFHBl8A24haFBdaJSv7gVZIXPRsrHUtdq0xU989eo50lNNq
