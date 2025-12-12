@@ -1,0 +1,12 @@
+~ ❯ claude doctor                                                                                                 4s
+
+ Diagnostics
+ └ Currently running: npm-global (2.0.65)
+ └ Path: /usr/bin/node
+ └ Invoked: /home/toast/.npm-global/bin/claude
+ └ Config install method: unknown
+ └ Auto-updates: false
+ └ Update permissions: Yes
+ └ Search: OK (vendor)
+
+ Press Enter to continue…
