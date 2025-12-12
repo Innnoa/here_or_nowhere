@@ -17,3 +17,15 @@ CMake Error at CMakeLists.txt:41 (target_link_libraries):
   The uses of the keyword signature are here:
 
    * CMakeLists.txt:38 (target_link_libraries)
+
+
+CMake Error at CMakeLists.txt:48 (target_link_libraries):
+  Target "server" links to:
+
+    absl::log_internal_check_op
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
