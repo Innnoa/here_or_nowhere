@@ -1,0 +1,8 @@
+~ ❯ npm uninstall -g @anthropic-ai/claude-code
+npm error code ENOTEMPTY
+npm error syscall rename
+npm error path /home/toast/.npm-global/lib/node_modules/@anthropic-ai/claude-code
+npm error dest /home/toast/.npm-global/lib/node_modules/@anthropic-ai/.claude-code-MTahQ8Ro
+npm error errno -39
+npm error ENOTEMPTY: directory not empty, rename '/home/toast/.npm-global/lib/node_modules/@anthropic-ai/claude-code' -> '/home/toast/.npm-global/lib/node_modules/@anthropic-ai/.claude-code-MTahQ8Ro'
+npm error A complete log of this run can be found in: /home/toast/.npm/_logs/2025-12-12T05_28_08_331Z-debug-0.log
