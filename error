@@ -4,3 +4,7 @@ collect2: error: ld returned 1 exit status
 make[2]: *** [CMakeFiles/server.dir/build.make:105: server] Error 1
 make[1]: *** [CMakeFiles/Makefile2:122: CMakeFiles/server.dir/all] Error 2
 make: *** [Makefile:91: all] Error 2
+
+
+
+target_link_libraries(server absl::log absl::flags absl::flags_parse ${ABSL_LTSCPP_DEFAULT_LIBRARIES})
