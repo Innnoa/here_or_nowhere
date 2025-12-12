@@ -29,3 +29,17 @@ CMake Error at CMakeLists.txt:48 (target_link_libraries):
     * There is a typo in the target name.
     * A find_package call is missing for an IMPORTED target.
     * An ALIAS target is missing.
+
+
+
+
+CMake Error at CMakeLists.txt:48 (target_link_libraries):
+  Target "server" links to:
+
+    absl::log
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
