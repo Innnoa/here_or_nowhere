@@ -1,0 +1,15 @@
+~ ❯ curl -s https://api.aigc.bar/v1/messages \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: sk-QcFHBl8A24haFBdaJSv7gVZIXPRsrHUtdq0xU989eo50lNNq" \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{"model":"claude-sonnet-4-20250514","max_tokens":10,"messages":[{"role":"user","content":"hi"}]}'
+{"content":[{"text":"Hello! I'm Claude, Anthropic's","type":"text"}],"id":"msg_01RXmZXASkKeLRwbMb2d5gmn","model":"claude-sonnet-4-20250514","role":"assistant","stop_reason":"max_tokens","stop_sequence":null,"type":"message","usage":{"cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"input_tokens":22,"output_tokens":10,"service_tier":"standard"}}%~ ❯ curl -I https://api.aigc.bar                      4s
+HTTP/2 200
+cache-control: no-cache
+cache-control: no-cache
+content-type: text/html; charset=utf-8
+date: Fri, 12 Dec 2025 05:11:14 GMT
+server: Dooki CDN
+strict-transport-security: max-age=31536000
+x-cache: BYPASS
+x-oneapi-request-id: 20251212051114578759381yzLsXT2Y
