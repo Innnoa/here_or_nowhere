@@ -53,3 +53,14 @@ collect2: error: ld returned 1 exit status
 make[2]: *** [CMakeFiles/server.dir/build.make:171: server] Error 1
 make[1]: *** [CMakeFiles/Makefile2:122: CMakeFiles/server.dir/all] Error 2
 make: *** [Makefile:91: all] Error 2
+
+
+
+
+To https://github.com/Innnoa/Plants_vs_Zombies_Lawnmower_Edition.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Innnoa/Plants_vs_Zombies_Lawnmower_Edition.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
