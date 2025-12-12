@@ -1,0 +1,9 @@
+# 测试1：检查服务是否可达
+curl -I https://api.aigc.bar
+
+# 测试2：测试messages端点
+curl -s https://api.aigc.bar/v1/messages \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: sk-QcFHBl8A24haFBdaJSv7gVZIXPRsrHUtdq0xU989eo50lNNq" \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{"model":"claude-sonnet-4-20250514","max_tokens":10,"messages":[{"role":"user","content":"hi"}]}'
