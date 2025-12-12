@@ -8,3 +8,12 @@ make: *** [Makefile:91: all] Error 2
 
 
 target_link_libraries(server absl::log absl::flags absl::flags_parse ${ABSL_LTSCPP_DEFAULT_LIBRARIES})
+
+CMake Error at CMakeLists.txt:41 (target_link_libraries):
+  The keyword signature for target_link_libraries has already been used with
+  the target "server".  All uses of target_link_libraries with a target must
+  be either all-keyword or all-plain.
+
+  The uses of the keyword signature are here:
+
+   * CMakeLists.txt:38 (target_link_libraries)
