@@ -1,0 +1,23 @@
+要“完整执行”这份 AGENTS.md 的流程，主要依赖以下几类前置
+  条件：
+
+  - MCP 工具可用：exa、code-index、shrimp-task-manager 等
+  需要在 ~/.codex/config.toml 里配置并能被发现；当前会话
+  MCP 列表为空，所以这些“必须使用”的工具实际上不可用。
+  - 本地文件系统写权限：必须能在项目根下写入 .codex/（生
+  成 context-*.json、operations-log.md、testing.md、
+  verification.md、review-report.md 等）。
+  - 项目运行时与测试工具：按项目技术栈准备（如 Node/
+  Python/Go + 对应测试框架），否则“必须运行单元/冒烟/功能
+  测试”无法落地。
+  - 基础 CLI 工具：rg、git、sed 等检索/审查工具可用，才能
+  满足检索与变更审计要求。
+  - 权限与网络：需要安装依赖或拉包时必须有网络访问与相应
+  权限，否则“自动验证/依赖安装”会受限。
+
+  如果你想要我帮你把 ~/.codex/config.toml 补齐 MCP 工具，
+  或检查哪些工具缺失，我可以继续处理。
+  下一步你更想我做哪件事？
+
+  1. 检查并补全 ~/.codex/config.toml 的 MCP 配置
+  2. 仅列出当前系统已具备的工具与缺失项

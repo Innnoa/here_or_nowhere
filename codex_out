@@ -1,0 +1,24 @@
+• 主要发现
+
+  - proto/message.proto:35、proto/message.proto:40 等定义了 MSG_C2S_START_GAME/MSG_C2S_GET_PLAYER_LIST 以及大量游戏
+    同步消息，但 src/network/tcp/tcp_server.cpp:122 的分发只处理登录与基础房间操作，其他类型会落入默认的“未知操作类
+    型”日志且无响应（src/network/tcp/tcp_server.cpp:264）。若客户端已发这些消息，会被视为未实现功能/冗余协议，建议补
+    齐或移除枚举。
+  - 心跳回应里把 online_players 固定写成 1（src/network/tcp/tcp_server.cpp:154 和 src/network/tcp/
+    tcp_server.cpp:167），客户端会误判在线人数。应改为统计当前在线会话或房间内玩家数。
+  - 日志/输出较混乱：大量 std::cout 调试信息与 spdlog 混用（如 src/network/tcp/tcp_server.cpp:53, src/network/tcp/
+    tcp_server.cpp:82, src/network/tcp/tcp_server.cpp:124, src/network/tcp/tcp_server.cpp:201, src/network/tcp/
+    tcp_server.cpp:266），且提示语不准确或有笔误（src/network/tcp/tcp_server.cpp:65 把超长包也记为“长度为空”，src/
+    network/tcp/tcp_server.cpp:91 末尾多余右括号）。建议统一用 spdlog 的级别化日志并修正文案，避免混杂输出。
+  - 房间状态字段未被使用：Room::is_playing 被初始化为 false（include/game/managers/room_manager.hpp:46，src/game/
+    managers/room_manager.cpp:35），但没有任何地方置为 true 或随开始/结束游戏变更，客户端收到的房间列表永远显示“不在
+    游戏”。如果计划支持开始游戏（与上面的协议枚举对应），需要在相应流程中维护该状态；否则可以移除以减少误导。
+
+  开放问题/假设
+
+  - 在线人数希望统计的是当前连接数还是每个房间内人数？确认后再调整心跳字段。
+  - 计划支持的最小消息集合是哪几个？确认后可删去暂不需要的枚举与 proto 结构，减少协议噪音。
+
+  后续可选
+
+      1. 统一日志并修正文案；2) 确定并实现需要的消息类型（开始游戏/玩家列表等），同步维护 is_playing。
