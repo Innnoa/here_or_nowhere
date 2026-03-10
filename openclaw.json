@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.2",
+    "lastTouchedAt": "2026-03-07T07:17:18.349Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-07T03:54:20.263Z",
+    "lastRunVersion": "2026.3.2",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "custom-new-fastaicode-top": {
+        "baseUrl": "https://new.fastaicode.top",
+        "apiKey": "sk-ff69a9f6587624304b41b471abb58dcab2b3e575e82b3893cfb816f44fc9e032",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "gpt-5.2",
+            "name": "gpt-5.2 (Custom Provider)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 16384
+          },
+          {
+            "id": "gpt-5.2-codex",
+            "name": "gpt-5.2-codex (Custom Provider)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 16384
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "custom-new-fastaicode-top/gpt-5.2-codex"
+      },
+      "models": {
+        "custom-new-fastaicode-top/gpt-5.2": {
+          "alias": "codex"
+        },
+        "custom-new-fastaicode-top/gpt-5.2-codex": {
+          "alias": "codex52"
+        }
+      },
+      "workspace": "/home/toast",
+      "compaction": {
+        "mode": "safeguard",
+        "reserveTokens": 100000,
+        "reserveTokensFloor": 100000
+      },
+      "thinkingDefault": "high",
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "tools": {
+    "profile": "full",
+    "fs": {
+      "workspaceOnly": true
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": false
+        },
+        "session-memory": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": false
+        },
+        "bootstrap-extra-files": {
+          "enabled": false
+        }
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8759934376:AAEiMcqtCSSupuMm1zyMdkCKGCGpRylJXAk",
+      "groupAllowFrom": [
+        "7312361551"
+      ],
+      "groupPolicy": "allowlist",
+      "streaming": "off"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "allowedOrigins": [
+        "http://127.0.0.1:18789",
+        "http://localhost:18789",
+        "http://[::1]:18789"
+      ]
+    },
+    "auth": {
+      "mode": "token",
+      "token": "5bdd8c0d1e0821e287e6a085d475e7d70cbb9f7deec6b0cb"
+    },
+    "trustedProxies": [
+      "127.0.0.1",
+      "::1"
+    ],
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "canvas.present",
+        "canvas.hide",
+        "canvas.navigate",
+        "canvas.eval",
+        "canvas.snapshot",
+        "canvas.a2ui.push",
+        "canvas.a2ui.pushJSONL",
+        "canvas.a2ui.reset"
+      ]
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  }
+}
