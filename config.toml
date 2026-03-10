@@ -1,0 +1,84 @@
+model_provider = "fastaicode"
+model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
+network_access = "enabled"
+disable_response_storage = true
+windows_wsl_setup_acknowledged = true
+model_verbosity = "high"
+personality = "pragmatic"
+
+[model_providers.fastaicode]
+name = "fastaicode"
+base_url = "https://new.fastaicode.top"
+wire_api = "responses"
+requires_openai_auth = true
+
+[features]
+multi_agent = true
+
+[agents]
+max_threads = 3
+
+[agents.coder]
+model = "gpt-5.4"
+prompt = "你负责代码实现与修复；优先最小变更并补齐测试。"
+
+[agents.reviewer]
+model = "gpt-5.4"
+prompt = "你只做审查，重点看回归风险、边界条件和测试缺口。"
+
+[projects."/home/toast/LawnMowerGame"]
+trust_level = "trusted"
+
+[projects."/home/toast/.codex"]
+trust_level = "trusted"
+
+[projects."/home/toast"]
+trust_level = "trusted"
+
+[projects."/home/toast/Scripts/music_player/scripts"]
+trust_level = "trusted"
+
+[projects."/home/toast/Projects/LawnMowerGame"]
+trust_level = "trusted"
+
+[projects."/home/toast/Projects/PathLearn_Nav"]
+trust_level = "trusted"
+
+[projects."/home/toast/Downloads"]
+trust_level = "trusted"
+
+[projects."/home/toast/Music"]
+trust_level = "trusted"
+
+[projects."/home/toast/Projects/ZLMediaKit"]
+trust_level = "trusted"
+
+[projects."/home/toast/Projects/here_or_nowhere"]
+trust_level = "trusted"
+
+[mcp_servers.sequential-thinking]
+url = "https://server.smithery.ai/@smithery-ai/server-sequential-thinking"
+
+[mcp_servers.context7]
+url = "https://server.smithery.ai/@upstash/context7-mcp"
+
+[mcp_servers.exa_search]
+url = "https://mcp.exa.ai"
+
+[mcp_servers.github]
+url = "https://github.run.tools"
+
+[mcp_servers.code-index]
+type = "stdio"
+command = "/home/toast/.local/bin/uvx"
+args = ["code-index-mcp"]
+
+[notice]
+hide_full_access_warning = true
+
+# 临时禁用：当前环境 DNS/网络异常会导致 shrimp-task-manager 初始化握手失败
+# [mcp_servers.shrimp-task-manager]
+# command = "npx"
+# args = ["-y", "@smithery/cli@latest", "run", "@cjo4m06/mcp-shrimp-task-manager"]
+# startup_timeout_sec = 60.0
