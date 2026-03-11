@@ -18,24 +18,8 @@
         "api": "openai-responses",
         "models": [
           {
-            "id": "gpt-5.2",
-            "name": "gpt-5.2 (Custom Provider)",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 400000,
-            "maxTokens": 16384
-          },
-          {
-            "id": "gpt-5.2-codex",
-            "name": "gpt-5.2-codex (Custom Provider)",
+            "id": "gpt-5.4",
+            "name": "gpt-5.4 (Custom Provider)",
             "reasoning": false,
             "input": [
               "text"
@@ -56,14 +40,11 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "custom-new-fastaicode-top/gpt-5.2-codex"
+        "primary": "custom-new-fastaicode-top/gpt-5.4"
       },
       "models": {
-        "custom-new-fastaicode-top/gpt-5.2": {
+        "custom-new-fastaicode-top/gpt-5.4": {
           "alias": "codex"
-        },
-        "custom-new-fastaicode-top/gpt-5.2-codex": {
-          "alias": "codex52"
         }
       },
       "workspace": "/home/toast",
@@ -125,7 +106,7 @@
         "7312361551"
       ],
       "groupPolicy": "allowlist",
-      "streaming": "off"
+      "streaming": "on"
     }
   },
   "gateway": {
