@@ -143,15 +143,15 @@
     }
   }
 
-  需要注意的地方：
+  # 需要注意的地方：
 
-  - custom-provider 和 请改成你的模型ID 这两个值要保持一致。
-    它们同时出现在 models.providers、agents.defaults.model.primary、agents.defaults.models 里。
-  - workspace 必须填绝对路径。
-    Linux 例子：/home/你的用户名/.openclaw/workspace
-    Windows 例子：C:\\Users\\你的用户名\\.openclaw\\workspace
-  - groupAllowFrom 里要填 Telegram 数字用户 ID，不是 bot 用户名。
-  - 如果你改了 gateway.port，要把 controlUi.allowedOrigins 里的端口一起改掉。
-  - streaming 这里我用了 partial，比 off 更通用。
-    如果你不想看到流式草稿，可以改成 off。
-  - 如果你要更开放的工具权限，把 tools.profile 从 coding 改回 full。
+  # - custom-provider 和 请改成你的模型ID 这两个值要保持一致。
+  #  它们同时出现在 models.providers、agents.defaults.model.primary、agents.defaults.models 里。
+  # - workspace 必须填绝对路径。
+  #  Linux 例子：/home/你的用户名/.openclaw/workspace
+  #  Windows 例子：C:\\Users\\你的用户名\\.openclaw\\workspace
+  # - groupAllowFrom 里要填 Telegram 数字用户 ID，不是 bot 用户名。
+  # - 如果你改了 gateway.port，要把 controlUi.allowedOrigins 里的端口一起改掉。
+  # - streaming 这里我用了 partial，比 off 更通用。
+  #  如果你不想看到流式草稿，可以改成 off。
+  #- 如果你要更开放的工具权限，把 tools.profile 从 coding 改回 full。
