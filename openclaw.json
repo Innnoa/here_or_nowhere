@@ -50,12 +50,6 @@
         }
       }
     },
-    "tools": {
-      "profile": "coding",
-      "fs": {
-        "workspaceOnly": true
-      }
-    },
     "messages": {
       "ackReactionScope": "group-mentions"
     },
