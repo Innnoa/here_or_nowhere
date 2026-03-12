@@ -1,155 +1,157 @@
-{
-  "meta": {
-    "lastTouchedVersion": "2026.3.2",
-    "lastTouchedAt": "2026-03-07T07:17:18.349Z"
-  },
-  "wizard": {
-    "lastRunAt": "2026-03-07T03:54:20.263Z",
-    "lastRunVersion": "2026.3.2",
-    "lastRunCommand": "configure",
-    "lastRunMode": "local"
-  },
-  "models": {
-    "mode": "merge",
-    "providers": {
-      "custom-new-fastaicode-top": {
-        "baseUrl": "https://new.fastaicode.top",
-        "apiKey": "sk-ff69a9f6587624304b41b471abb58dcab2b3e575e82b3893cfb816f44fc9e032",
-        "api": "openai-responses",
-        "models": [
-          {
-            "id": "gpt-5.4",
-            "name": "gpt-5.4 (Custom Provider)",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 400000,
-            "maxTokens": 16384
+  {
+    "models": {
+      "mode": "merge",
+      "providers": {
+        "custom-provider": {
+          "baseUrl": "请改成你的模型接口地址",
+          "apiKey": "请改成你的模型接口密钥",
+          "api": "openai-responses",
+          "models": [
+            {
+              "id": "请改成你的模型ID",
+              "name": "请改成你的模型显示名称",
+              "reasoning": false,
+              "input": [
+                "text"
+              ],
+              "cost": {
+                "input": 2.5,
+                "output": 15,
+                "cacheRead": 0,
+                "cacheWrite": 0
+              },
+              "contextWindow": 400000,
+              "maxTokens": 16384
+            }
+          ]
+        }
+      }
+    },
+    "agents": {
+      "defaults": {
+        "model": {
+          "primary": "custom-provider/请改成你的模型ID"
+        },
+        "models": {
+          "custom-provider/请改成你的模型ID": {
+            "alias": "请改成你的模型别名"
           }
+        },
+        "workspace": "请改成你的工作区绝对路径",
+        "compaction": {
+          "mode": "safeguard",
+          "reserveTokens": 100000,
+          "reserveTokensFloor": 100000
+        },
+        "thinkingDefault": "high",
+        "maxConcurrent": 4,
+        "subagents": {
+          "maxConcurrent": 8
+        }
+      }
+    },
+    "tools": {
+      "profile": "coding",
+      "fs": {
+        "workspaceOnly": true
+      }
+    },
+    "messages": {
+      "ackReactionScope": "group-mentions"
+    },
+    "commands": {
+      "native": "auto",
+      "nativeSkills": "auto",
+      "restart": true,
+      "ownerDisplay": "raw"
+    },
+    "session": {
+      "dmScope": "per-channel-peer"
+    },
+    "hooks": {
+      "internal": {
+        "enabled": true,
+        "entries": {
+          "boot-md": {
+            "enabled": false
+          },
+          "session-memory": {
+            "enabled": true
+          },
+          "command-logger": {
+            "enabled": false
+          },
+          "bootstrap-extra-files": {
+            "enabled": false
+          }
+        }
+      }
+    },
+    "channels": {
+      "telegram": {
+        "enabled": true,
+        "dmPolicy": "pairing",
+        "botToken": "请改成你的Telegram机器人Token",
+        "groupAllowFrom": [
+          "请改成允许触发机器人的Telegram用户ID"
+        ],
+        "groupPolicy": "allowlist",
+        "streaming": "partial"
+      }
+    },
+    "gateway": {
+      "port": 18789,
+      "mode": "local",
+      "bind": "loopback",
+      "controlUi": {
+        "allowedOrigins": [
+          "http://127.0.0.1:18789",
+          "http://localhost:18789",
+          "http://[::1]:18789"
+        ]
+      },
+      "auth": {
+        "mode": "token",
+        "token": "请改成你的Gateway访问令牌"
+      },
+      "trustedProxies": [
+        "127.0.0.1",
+        "::1"
+      ],
+      "tailscale": {
+        "mode": "off",
+        "resetOnExit": false
+      },
+      "nodes": {
+        "denyCommands": [
+          "camera.snap",
+          "camera.clip",
+          "screen.record",
+          "contacts.add",
+          "calendar.add",
+          "reminders.add",
+          "sms.send"
         ]
       }
-    }
-  },
-  "agents": {
-    "defaults": {
-      "model": {
-        "primary": "custom-new-fastaicode-top/gpt-5.4"
-      },
-      "models": {
-        "custom-new-fastaicode-top/gpt-5.4": {
-          "alias": "codex"
-        }
-      },
-      "workspace": "/home/toast",
-      "compaction": {
-        "mode": "safeguard",
-        "reserveTokens": 100000,
-        "reserveTokensFloor": 100000
-      },
-      "thinkingDefault": "high",
-      "maxConcurrent": 4,
-      "subagents": {
-        "maxConcurrent": 8
-      }
-    }
-  },
-  "tools": {
-    "profile": "full",
-    "fs": {
-      "workspaceOnly": true
-    }
-  },
-  "messages": {
-    "ackReactionScope": "group-mentions"
-  },
-  "commands": {
-    "native": "auto",
-    "nativeSkills": "auto",
-    "restart": true,
-    "ownerDisplay": "raw"
-  },
-  "session": {
-    "dmScope": "per-channel-peer"
-  },
-  "hooks": {
-    "internal": {
-      "enabled": true,
+    },
+    "plugins": {
       "entries": {
-        "boot-md": {
-          "enabled": false
-        },
-        "session-memory": {
+        "telegram": {
           "enabled": true
-        },
-        "command-logger": {
-          "enabled": false
-        },
-        "bootstrap-extra-files": {
-          "enabled": false
         }
-      }
-    }
-  },
-  "channels": {
-    "telegram": {
-      "enabled": true,
-      "dmPolicy": "pairing",
-      "botToken": "8759934376:AAEiMcqtCSSupuMm1zyMdkCKGCGpRylJXAk",
-      "groupAllowFrom": [
-        "7312361551"
-      ],
-      "groupPolicy": "allowlist",
-      "streaming": "on"
-    }
-  },
-  "gateway": {
-    "port": 18789,
-    "mode": "local",
-    "bind": "loopback",
-    "controlUi": {
-      "allowedOrigins": [
-        "http://127.0.0.1:18789",
-        "http://localhost:18789",
-        "http://[::1]:18789"
-      ]
-    },
-    "auth": {
-      "mode": "token",
-      "token": "5bdd8c0d1e0821e287e6a085d475e7d70cbb9f7deec6b0cb"
-    },
-    "trustedProxies": [
-      "127.0.0.1",
-      "::1"
-    ],
-    "tailscale": {
-      "mode": "off",
-      "resetOnExit": false
-    },
-    "nodes": {
-      "denyCommands": [
-        "canvas.present",
-        "canvas.hide",
-        "canvas.navigate",
-        "canvas.eval",
-        "canvas.snapshot",
-        "canvas.a2ui.push",
-        "canvas.a2ui.pushJSONL",
-        "canvas.a2ui.reset"
-      ]
-    }
-  },
-  "plugins": {
-    "entries": {
-      "telegram": {
-        "enabled": true
       }
     }
   }
-}
+
+  需要注意的地方：
+
+  - custom-provider 和 请改成你的模型ID 这两个值要保持一致。
+    它们同时出现在 models.providers、agents.defaults.model.primary、agents.defaults.models 里。
+  - workspace 必须填绝对路径。
+    Linux 例子：/home/你的用户名/.openclaw/workspace
+    Windows 例子：C:\\Users\\你的用户名\\.openclaw\\workspace
+  - groupAllowFrom 里要填 Telegram 数字用户 ID，不是 bot 用户名。
+  - 如果你改了 gateway.port，要把 controlUi.allowedOrigins 里的端口一起改掉。
+  - streaming 这里我用了 partial，比 off 更通用。
+    如果你不想看到流式草稿，可以改成 off。
+  - 如果你要更开放的工具权限，把 tools.profile 从 coding 改回 full。
